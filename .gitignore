@@ -1,4 +1,4 @@
 node_modules
-config/dev.js
+/config/dev
 nohup.out
 .DS_Store
