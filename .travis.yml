@@ -6,7 +6,7 @@ services:
   - mongodb
   - redis-server
 env:
-  - NODE_ENV=ci PORT=3000 GOOGLE_CLIENT_ID=70265989829-0t7m7ce5crs6scqd3t0t6g7pv83ncaii.apps.googleusercontent.com GOOGLE_CLIENT_SECRET=8mkniDQOqacXtlRD3gA4n2az
+  - NODE_ENV=ci PORT=3000
 cache:
   directories:
     - node_modules
