@@ -1,23 +1,37 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchBlog } from '../../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchBlog } from "../../actions";
 
 class BlogShow extends Component {
   componentDidMount() {
     this.props.fetchBlog(this.props.match.params._id);
   }
 
+  renderImage() {
+    if (this.props.blog.imageUrl) {
+      return (
+        <img
+          alt="blog"
+          src={
+            "https://adv-node-blog-bucket.s3.amazonaws.com/" +
+            this.props.blog.imageUrl
+          }
+        />
+      );
+    }
+  }
+
   render() {
     if (!this.props.blog) {
-      return '';
+      return "";
     }
-
     const { title, content } = this.props.blog;
 
     return (
       <div>
         <h3>{title}</h3>
         <p>{content}</p>
+        {this.renderImage()}
       </div>
     );
   }
